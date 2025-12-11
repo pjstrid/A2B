@@ -43,7 +43,7 @@ class FirebaseManager {
             }
     }
 
-    fun addEmployee(distance: Double, name: String, date: String) {
+    fun addRun(distance: Double, name: String, date: String) {
         currentUser = Firebase.auth.currentUser ?: return
 
         val fields = mapOf(
@@ -61,12 +61,12 @@ class FirebaseManager {
 
     }
 
-    fun getEmployee(id: String): Run? {
+    fun getRun(id: String): Run? {
 
         return runs.value?.find { it.id == id }
     }
 
-    fun updateEmployee(id: String, distance: Double, name: String, date: String) {
+    fun updateRun(id: String, distance: Double, name: String, date: String) {
 
         currentUser = Firebase.auth.currentUser ?: return
 
@@ -85,7 +85,7 @@ class FirebaseManager {
             }
     }
 
-    fun deleteEmployee(id: String) {
+    fun deleteRun(id: String) {
 
         currentUser = Firebase.auth.currentUser ?: return
 

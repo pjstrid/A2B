@@ -12,43 +12,25 @@ import com.example.runa2b.databinding.FragmentRunsRecyclerBinding
 
 class RunsRecyclerFragment : Fragment() {
 
-    //    interface RecyclerFragListener {
-//        fun addButtonClicked()
-//        fun itemClick(id: Int)
-//    }
     lateinit var binding: FragmentRunsRecyclerBinding
 
-    lateinit var adapter: EmployeeRecyclerAdapter
+    lateinit var adapter: RunRecyclerAdapter
 
-//    var ownerActivity: RecyclerFragListener? = null
 
-    lateinit var viewModel : EmployeeViewModel
-
-//    override fun onAttach(context: Context) {
-//        super.onAttach(context)
-//
-//        try {
-//            ownerActivity = context as RecyclerFragListener
-//            Log.i("SOUT", "RecyclerFragListener implemented successfully")
-//
-//        } catch (e: Exception) {
-//            Log.e("SOUT", "FAILED! RecyclerFragListener NOT implemented: ${e.message}")
-//        }
-//
-//    }
+    lateinit var viewModel : RunViewModel
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        viewModel = ViewModelProvider(requireActivity())[EmployeeViewModel::class.java]
+        viewModel = ViewModelProvider(requireActivity())[RunViewModel::class.java]
 
-        adapter = EmployeeRecyclerAdapter({ employee ->
-            showDeleteDialog(employee)
+        adapter = RunRecyclerAdapter({ run ->
+            showDeleteDialog(run)
 
-        }, { employee ->
+        }, { run ->
             parentFragmentManager.beginTransaction().apply {
-                replace(R.id.frag_cont_main, EditFragment.newInstance(employee.id))
+                replace(R.id.frag_cont_main, EditFragment.newInstance(run.id))
                 addToBackStack(null)
                 commit()
             }
@@ -69,9 +51,9 @@ class RunsRecyclerFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.recycleViewEmployees.layoutManager = LinearLayoutManager(requireContext())  // eller view.context
-        binding.recycleViewEmployees.addItemDecoration(SpaceItemDecoration(24))
-        binding.recycleViewEmployees.adapter = adapter
+        binding.recycleViewRuns.layoutManager = LinearLayoutManager(requireContext())  // eller view.context
+        binding.recycleViewRuns.addItemDecoration(SpaceItemDecoration(24))
+        binding.recycleViewRuns.adapter = adapter
 
         binding.fabAdd.setOnClickListener {
             parentFragmentManager.beginTransaction().apply {
@@ -81,19 +63,19 @@ class RunsRecyclerFragment : Fragment() {
             }
         }
 
-        viewModel.employee.observe(viewLifecycleOwner) {
+        viewModel.run.observe(viewLifecycleOwner) {
                 list ->
             adapter.submitList(list)
         }
 
     }
 
-    fun showDeleteDialog(employee: Employee) {
+    fun showDeleteDialog(run: Run) {
         AlertDialog.Builder(requireActivity())
-            .setTitle("Delete Employee")
-            .setMessage("Do you want to delete: ${employee.name}?")
+            .setTitle("Delete run")
+            .setMessage("Do you want to delete: ${run.distance} km?")
             .setPositiveButton("Yes"){_,_ ->
-                viewModel.deleteEmployee(employee.id)
+                viewModel.deleteRun(run.id)
             }.setNegativeButton("Cancel", null).show()
     }
 

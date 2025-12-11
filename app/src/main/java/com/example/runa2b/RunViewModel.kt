@@ -8,23 +8,23 @@ class RunViewModel : ViewModel() {
 
     private val dataManager = FirebaseManager()
 
-    val employee: LiveData<MutableList<Run>> = dataManager.runs
+    val run: LiveData<MutableList<Run>> = dataManager.runs
 
 
 
-    fun addEmployee(name: String, age: Int, salary: Double) {
-        dataManager.addEmployee(name, age, salary)
+    fun addRun(distance: Double, name: String, date: String) {
+        dataManager.addRun(distance, name, date)
     }
 
-    fun updateEmployee(id: String, name: String, age: Int, salary: Double) {
-        dataManager.updateEmployee(id, name, age, salary)
+    fun updateRun(id: String, distance: Double, name: String, date: String) {
+        dataManager.updateRun(id, distance, name, date)
     }
 
-    fun getEmployee(id: String): Run? {
-        return dataManager.getEmployee(id)
+    fun getRun(id: String): Run? {
+        return dataManager.getRun(id)
     }
 
-    fun deleteEmployee(id: String) {
-        dataManager.deleteEmployee(id)
+    fun deleteRun(id: String) {
+        dataManager.deleteRun(id)
     }
 }

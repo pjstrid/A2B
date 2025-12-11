@@ -9,10 +9,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-//        supportFragmentManager.beginTransaction().apply {
-//            replace(R.id.frag_cont_main, RecyclerFragment())
-//            commit()
-//        }
+        supportFragmentManager.beginTransaction().apply {
+            replace(R.id.frag_cont_main, RunsRecyclerFragment())
+            commit()
+        }
 
     }
 }
