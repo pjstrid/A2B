@@ -34,7 +34,7 @@ class RunsRecyclerFragment : Fragment() {
                 addToBackStack(null)
                 commit()
             }
-        }) // om sista parametern i en metod är en lambda kan man lägga den efter parentes
+        })
     }
 
 
@@ -51,7 +51,7 @@ class RunsRecyclerFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.recycleViewRuns.layoutManager = LinearLayoutManager(requireContext())  // eller view.context
+        binding.recycleViewRuns.layoutManager = LinearLayoutManager(requireContext())
         binding.recycleViewRuns.addItemDecoration(SpaceItemDecoration(24))
         binding.recycleViewRuns.adapter = adapter
 
@@ -73,7 +73,7 @@ class RunsRecyclerFragment : Fragment() {
     fun showDeleteDialog(run: Run) {
         AlertDialog.Builder(requireActivity())
             .setTitle("Delete run")
-            .setMessage("Do you want to delete: ${run.distance} km?")
+            .setMessage("Do you want to delete:\n${run.distance} km\n${run.name}\n${run.date}?")
             .setPositiveButton("Yes"){_,_ ->
                 viewModel.deleteRun(run.id)
             }.setNegativeButton("Cancel", null).show()

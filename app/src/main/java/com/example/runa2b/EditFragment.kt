@@ -48,7 +48,7 @@ class EditFragment : Fragment() {
         }
 
         binding.saveButton.setOnClickListener {
-            val distance = binding.etDistance.toString().toDoubleOrNull() ?: 0.0
+            val distance = binding.etDistance.text.toString().replace(",",".").toDoubleOrNull() ?: 0.0
             val name = binding.etName.text.toString()
             val date = binding.etDate.text.toString()
 

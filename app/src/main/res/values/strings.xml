@@ -5,4 +5,9 @@
     <string name="add_button">add floating button</string>
     <string name="save">Save</string>
     <string name="cancel">Cancel</string>
+    <string name="password">Password</string>
+    <string name="log_in">Log in</string>
+    <string name="register">Register</string>
+    <string name="e_mail">E-mail</string>
+    <string name="welcome">Welcome</string>
 </resources>

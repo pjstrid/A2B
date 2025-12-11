@@ -2,10 +2,12 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/blue"
-    tools:context=".EditFragment">
+    tools:context=".LoginActivity">
+
 
     <androidx.cardview.widget.CardView
         android:layout_width="0dp"
@@ -29,84 +31,67 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 android:fontFamily="@font/quantico_bold"
-                android:text="Add run"
+                android:text="@string/welcome"
                 android:textAlignment="center"
                 android:textSize="32sp"
-                android:textStyle="bold"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/et_distance"
+                android:id="@+id/et_username"
                 android:layout_width="256dp"
                 android:layout_height="48dp"
                 android:layout_marginTop="32dp"
-                android:autofillHints="Distance"
+                android:autofillHints="E-mail"
                 android:fontFamily="@font/quantico_bold"
-                android:hint="Distance"
-                android:inputType="numberDecimal"
+                android:hint="@string/e_mail"
+                android:inputType="text"
                 android:textAlignment="center"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_title" />
 
-            <EditText
-                android:id="@+id/et_name"
-                android:layout_width="256dp"
-                android:layout_height="48dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="12dp"
-                android:autofillHints="Name"
-                android:fontFamily="@font/quantico_bold"
-                android:hint="Name"
-                android:inputType="text"
-                android:textAlignment="center"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/et_distance" />
 
             <EditText
-                android:id="@+id/et_date"
+                android:id="@+id/et_password"
                 android:layout_width="256dp"
                 android:layout_height="48dp"
                 android:layout_marginTop="16dp"
-                android:autofillHints="Date"
+                android:autofillHints="Password"
                 android:fontFamily="@font/quantico_bold"
-                android:hint="Date"
-                android:inputType="date"
+                android:hint="@string/password"
+                android:inputType="textPassword"
                 android:textAlignment="center"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/et_name" />
+                app:layout_constraintTop_toBottomOf="@id/et_username" />
 
             <Button
-                android:id="@+id/save_button"
-                android:layout_width="wrap_content"
+                android:id="@+id/login_button"
+                android:layout_width="112dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:backgroundTint="@color/blue"
                 android:fontFamily="@font/quantico_bold"
-                android:text="@string/save"
-                android:textStyle="bold"
+                android:text="@string/log_in"
+                android:textColor="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/et_date" />
+                app:layout_constraintTop_toBottomOf="@id/et_password" />
 
             <Button
-                android:id="@+id/cancel_button"
-                android:layout_width="wrap_content"
+                android:id="@+id/register_button"
+                android:layout_width="112dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:backgroundTint="@color/blue"
                 android:fontFamily="@font/quantico_bold"
-                android:text="@string/cancel"
-                android:textStyle="bold"
+                android:text="@string/register"
+                android:textColor="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/save_button" />
+                app:layout_constraintTop_toBottomOf="@id/login_button" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

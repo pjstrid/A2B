@@ -77,7 +77,7 @@ class FirebaseManager {
         )
 
         db.collection("users").document(currentUser.uid)
-            .collection("employees").document(id).update(fields)
+            .collection("runs").document(id).update(fields)
             .addOnSuccessListener { documentReference ->
                 Log.i("SOUT", "Updated run on database with id: $id")
             }.addOnFailureListener {
@@ -90,7 +90,7 @@ class FirebaseManager {
         currentUser = Firebase.auth.currentUser ?: return
 
         db.collection("users").document(currentUser.uid)
-            .collection("employees").document(id).delete()
+            .collection("runs").document(id).delete()
             .addOnSuccessListener { documentReference ->
                 Log.i("SOUT", "Deleted run to database with id: $id")
             }.addOnFailureListener {
