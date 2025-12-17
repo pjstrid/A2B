@@ -69,7 +69,7 @@ class EditFragment : Fragment() {
         binding.etName.setText(run?.name)
         binding.etDate.setText(run?.date)
 
-        binding.tvTitle.text = "Edit Run"
+        binding.tvTitle.text = getString(R.string.text_edit_run)
     }
 
     companion object {

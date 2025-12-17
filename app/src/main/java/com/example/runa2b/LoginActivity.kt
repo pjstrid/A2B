@@ -34,6 +34,11 @@ class LoginActivity : AppCompatActivity() {
             }
         }
 
+        if (authViewModel.auth.currentUser != null) {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+
     }
     fun login() {
         val email = binding.etUsername.text.toString()

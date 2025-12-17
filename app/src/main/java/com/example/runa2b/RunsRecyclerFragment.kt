@@ -16,7 +16,6 @@ class RunsRecyclerFragment : Fragment() {
 
     lateinit var adapter: RunRecyclerAdapter
 
-
     lateinit var viewModel : RunViewModel
 
 

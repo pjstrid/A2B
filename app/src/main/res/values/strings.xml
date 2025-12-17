@@ -1,13 +1,24 @@
 <resources>
     <string name="app_name">RunA2B</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="add_button">add floating button</string>
-    <string name="save">Save</string>
-    <string name="cancel">Cancel</string>
+
+<!--    Login activity    -->
+    <string name="welcome">Welcome</string>
+    <string name="e_mail">E-mail</string>
     <string name="password">Password</string>
     <string name="log_in">Log in</string>
     <string name="register">Register</string>
-    <string name="e_mail">E-mail</string>
-    <string name="welcome">Welcome</string>
+
+<!--    Run recycler fragment    -->
+    <string name="runs_recycler_title">Runs</string>
+
+<!--    Edit fragment    -->
+    <string name="text_add_run">Add run</string>
+    <string name="text_edit_run">Edit Run</string>
+
+    <string name="distance_hint_text">Distance</string>
+    <string name="name_hint_text">Name</string>
+    <string name="date_hint_text">Date</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+
 </resources>
